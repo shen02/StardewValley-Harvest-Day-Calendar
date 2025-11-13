@@ -1,3 +1,5 @@
+using HarvestCalendar.DailyHarvestInfo;
+using HarvestCalendar.DataTypes;
 using StardewValley;
 using StardewValley.TerrainFeatures;
 using Microsoft.Xna.Framework;
@@ -5,12 +7,9 @@ using Microsoft.Xna.Framework;
 // HarvestableCrops is an object that maps each day in a season (1 ~ 28) to a list of crops that are harvestable on that given day. 
 internal class HarvestableCrops
 {
-    public Dictionary<int, List<Crop>> harvestableCrops;
-
-    // locationKey maps each day in a season to an integer array that provides information on the indices of harvestable crops in the corresponding 
-    // 
-    protected Dictionary<int, int[]> locationKey;
-    protected string[] farmableLocationNames = { "Farm", "Greenhouse", "IslandWest" };
+    // The list representing the lists of harvestable crop in each location on each day. 
+    // invariant: harvestableCrops.length is equal to the number of days in the game's seasons.
+    public List<DailyHarvest> harvestableCrops;
 
     public HarvestableCrops()
     {
