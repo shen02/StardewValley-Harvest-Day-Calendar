@@ -9,7 +9,7 @@ internal sealed class DailyHarvest
 {
     private Dictionary<FarmableLocationNames, HashSet<CropWithQuantity>> dailyHarvest;
 
-    public DailyHarvest(FarmableLocationNames locationNames)
+    public DailyHarvest()
     {
         dailyHarvest = new Dictionary<FarmableLocationNames, HashSet<CropWithQuantity>>();
         dictInit();
@@ -38,7 +38,7 @@ internal sealed class DailyHarvest
         dailyHarvest[locationName].Remove(crop);
     }
 
-    public HashSet<CropWithQuantity> getCropListByLocation(FarmableLocationNames location)
+    public HashSet<CropWithQuantity> getCropSetByLocation(FarmableLocationNames location)
     {
         return dailyHarvest[location];
     }
