@@ -12,11 +12,11 @@ internal sealed class DailyHarvest
     public DailyHarvest(FarmableLocationNames locationNames)
     {
         dailyHarvest = new Dictionary<FarmableLocationNames, HashSet<CropWithQuantity>>();
-        dictInit(locationNames);
+        dictInit();
     }
 
     // Fills this.dailyHarvest with the current farmable location names each mapped to an empty list of CropWithQuantity. 
-    private void dictInit(FarmableLocationNames locationNames)
+    private void dictInit()
     {
         // convert this.farmableLocationNames into a fixed length array. 
         FarmableLocationNames[] names = (FarmableLocationNames[])Enum.GetValues(typeof(FarmableLocationNames));
