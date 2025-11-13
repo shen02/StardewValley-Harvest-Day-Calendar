@@ -5,6 +5,7 @@ using StardewValley.TerrainFeatures;
 using Microsoft.Xna.Framework;
 using Force.DeepCloner;
 using System.Reflection.Metadata;
+using StardewModdingAPI.Events;
 
 namespace HarvestCalendar.SeasonHarvestInfo;
 // HarvestableCrops is an object that maps each day in a season to a list of crops that are harvestable on that given day. 
@@ -56,10 +57,11 @@ internal class HarvestableCrops
     }
 
     // Return the time remaining for the given crop to become harvestable.
-    protected int getCropHarvestTime(Crop crop)
+    protected int getTimeUntilHarvest(Crop crop)
     {
-        // sum from crop.currentPhase.Value (exclusive) to end and then plus daysInPhase
-        int sum = crop.phaseDays.Sum();
-        return sum - crop.phaseDays[crop.currentPhase.Value];
+        // sum days in all future phases and add days in current phase
+        int daysInRemainingPhases = crop.phaseDays.GetRange(crop.currentPhase.Value + 1, crop.phaseDays.Count).Sum(); ;
+
+        return daysInRemainingPhases + crop.dayOfCurrentPhase.Value;
     }
 }
