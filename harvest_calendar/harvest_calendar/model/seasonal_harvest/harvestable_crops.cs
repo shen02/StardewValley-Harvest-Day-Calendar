@@ -40,7 +40,7 @@ internal class HarvestableCrops
 
         Dictionary<int, HashSet<CropWithQuantity>> farmSet = mapByHarvestDate(farmCrops);
 
-        // Dictionary<int, HashSet<CropWithQuantity>> islandSet = islandCrops.Count > 0 ? mapByHarvestDate(islandCrops) : new Dictionary<int, HashSet<CropWithQuantity>>();
+        Dictionary<int, HashSet<CropWithQuantity>> islandSet = islandCrops.Count > 0 ? mapByHarvestDate(islandCrops) : new Dictionary<int, HashSet<CropWithQuantity>>();
 
         Dictionary<int, HashSet<CropWithQuantity>> greenHouseSet = greenHouseCrops.Count > 0 ? mapByHarvestDate(greenHouseCrops) : new Dictionary<int, HashSet<CropWithQuantity>>();
 
@@ -54,12 +54,12 @@ internal class HarvestableCrops
                 daily.addCrops(FarmableLocationNames.Farm, farmSet[i]);
                 hasHarvest = true;
             }
-            /*
-                        if (islandSet.ContainsKey(i))
-                        {
-                            daily.addCrops(FarmableLocationNames.IslandWest, islandSet[i]);
-                            hasHarvest = true;
-                        }*/
+
+            if (islandSet.ContainsKey(i))
+            {
+                daily.addCrops(FarmableLocationNames.IslandWest, islandSet[i]);
+                hasHarvest = true;
+            }
 
             if (greenHouseSet.ContainsKey(i))
             {
@@ -113,7 +113,7 @@ internal class HarvestableCrops
         foreach (KeyValuePair<Vector2, TerrainFeature> pair in location.terrainFeatures.Pairs)
         {
             // crop is not null; crop is able to produce harvest; crop is not weed.
-            if (pair.Value is HoeDirt { crop: not null, crop.indexOfHarvest: not null, crop.indexOfHarvest.Value: not "0" })
+            if (pair.Value is HoeDirt { crop: not null, crop.dead.Value: not true, crop.indexOfHarvest: not null, crop.indexOfHarvest.Value: not "0", crop.whichForageCrop.Value: not Crop.forageCrop_gingerID })
             {
                 allPlantedCrops.Add((pair.Value as HoeDirt).crop);
             }
