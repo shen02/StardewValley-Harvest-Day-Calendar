@@ -1,8 +1,0 @@
-/home/shen/Documents/mod/harvest-calendar/harvest_calendar/harvest_calendar/bin/Debug/net6.0/harvest_calendar.deps.json
-/home/shen/Documents/mod/harvest-calendar/harvest_calendar/harvest_calendar/bin/Debug/net6.0/harvest_calendar.dll
-/home/shen/Documents/mod/harvest-calendar/harvest_calendar/harvest_calendar/obj/Debug/net6.0/harvest_calendar.csproj.AssemblyReference.cache
-/home/shen/Documents/mod/harvest-calendar/harvest_calendar/harvest_calendar/obj/Debug/net6.0/harvest_calendar.GeneratedMSBuildEditorConfig.editorconfig
-/home/shen/Documents/mod/harvest-calendar/harvest_calendar/harvest_calendar/obj/Debug/net6.0/harvest_calendar.AssemblyInfoInputs.cache
-/home/shen/Documents/mod/harvest-calendar/harvest_calendar/harvest_calendar/obj/Debug/net6.0/harvest_calendar.AssemblyInfo.cs
-/home/shen/Documents/mod/harvest-calendar/harvest_calendar/harvest_calendar/obj/Debug/net6.0/harvest_calendar.csproj.CoreCompileInputs.cache
-/home/shen/Documents/mod/harvest-calendar/harvest_calendar/harvest_calendar/obj/Debug/net6.0/harvest_calendar.dll

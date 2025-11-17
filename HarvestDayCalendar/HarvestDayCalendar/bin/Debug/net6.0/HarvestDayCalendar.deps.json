@@ -6,19 +6,19 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "harvest_calendar/1.0.0": {
+      "HarvestDayCalendar/1.0.0": {
         "dependencies": {
           "Pathoschild.Stardew.ModBuildConfig": "4.4.0"
         },
         "runtime": {
-          "harvest_calendar.dll": {}
+          "HarvestDayCalendar.dll": {}
         }
       },
       "Pathoschild.Stardew.ModBuildConfig/4.4.0": {}
     }
   },
   "libraries": {
-    "harvest_calendar/1.0.0": {
+    "HarvestDayCalendar/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

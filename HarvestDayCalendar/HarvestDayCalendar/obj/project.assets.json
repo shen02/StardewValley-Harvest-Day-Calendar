@@ -43,11 +43,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/shen/Documents/mod/harvest-calendar/harvest_calendar/harvest_calendar/harvest_calendar.csproj",
-      "projectName": "harvest_calendar",
-      "projectPath": "/home/shen/Documents/mod/harvest-calendar/harvest_calendar/harvest_calendar/harvest_calendar.csproj",
+      "projectUniqueName": "/home/shen/Documents/mod/harvest-calendar/HarvestDayCalendar/HarvestDayCalendar/HarvestDayCalendar.csproj",
+      "projectName": "HarvestDayCalendar",
+      "projectPath": "/home/shen/Documents/mod/harvest-calendar/HarvestDayCalendar/HarvestDayCalendar/HarvestDayCalendar.csproj",
       "packagesPath": "/home/shen/.nuget/packages/",
-      "outputPath": "/home/shen/Documents/mod/harvest-calendar/harvest_calendar/harvest_calendar/obj/",
+      "outputPath": "/home/shen/Documents/mod/harvest-calendar/HarvestDayCalendar/HarvestDayCalendar/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/shen/.nuget/NuGet/NuGet.Config"
