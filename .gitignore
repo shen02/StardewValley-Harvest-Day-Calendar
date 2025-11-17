@@ -1,0 +1,10 @@
+# Ignore project solution
+*.sln
+*.csproj
+
+# Ignore all build artifacts
+HarvestDayCalendar/HarvestDayCalendar/obj
+HarvestDayCalendar/HarvestDayCalendar/bin
+
+# Ignore modding supplements
+*.json
