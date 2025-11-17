@@ -1,4 +1,4 @@
-namespace HarvestCalendar.DataTypes;
+namespace HarvestCalendar.Model.DataTypes;
 
 // The type of all farmable locations in current version of StardewValley.
 public enum FarmableLocationNames { Farm, Greenhouse, IslandWest }

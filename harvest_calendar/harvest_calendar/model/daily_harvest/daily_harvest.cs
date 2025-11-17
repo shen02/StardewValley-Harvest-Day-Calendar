@@ -1,6 +1,6 @@
-using HarvestCalendar.DataTypes;
+using HarvestCalendar.Model.DataTypes;
 
-namespace HarvestCalendar.DailyHarvestInfo;
+namespace HarvestCalendar.Model.DailyHarvestInfo;
 
 // Daily harvest represents a dictionary that maps a list of harvestable crops with their quantities to the GameLocation to which they are planted.
 // The object construtor takes in an enumeration of locationNames, which represents all farmable location in the game's given context.
