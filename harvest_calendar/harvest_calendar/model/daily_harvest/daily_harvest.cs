@@ -38,4 +38,9 @@ internal class DailyHarvest
     {
         return dailyHarvest[location];
     }
+
+    public Dictionary<FarmableLocationNames, HashSet<CropWithQuantity>> getAllCrops()
+    {
+        return this.dailyHarvest;
+    }
 }
