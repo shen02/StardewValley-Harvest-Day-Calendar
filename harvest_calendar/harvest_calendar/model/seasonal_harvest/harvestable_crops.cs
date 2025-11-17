@@ -29,7 +29,6 @@ internal class HarvestableCrops
     }
 
     // TODO: need abstraction + rewrite
-    // TODO: Island mapping still does not work for when island is not unlockde (null crops present)
     protected Dictionary<int, DailyHarvest> getAllCropsByDate()
     {
         Dictionary<int, DailyHarvest> allCropsByDate = new Dictionary<int, DailyHarvest>();
