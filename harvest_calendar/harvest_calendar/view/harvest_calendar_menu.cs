@@ -4,7 +4,6 @@ using StardewValley.Menus;
 using StardewValley;
 using Microsoft.Xna.Framework;
 using HarvestCalendar.Model.DataTypes;
-using HarvestCalendar.Model.DailyHarvestInfo;
 using HarvestCalendar.Model.Translator;
 
 namespace HarvestCalendar.View.Menu;
@@ -13,7 +12,7 @@ internal class HarvestCalendarMenu : Billboard
 {
   protected const string BackgroundTexturePath = "LooseSprites\\Billboard";
 
-  public Dictionary<int, Dictionary<FarmableLocationNames, List<Tuple<string, int>>>> harvestData;
+  private Dictionary<int, Dictionary<FarmableLocationNames, List<Tuple<string, int>>>> harvestData;
 
   public HarvestCalendarMenu()
   {
