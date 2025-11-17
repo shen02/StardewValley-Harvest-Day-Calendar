@@ -12,7 +12,7 @@ namespace HarvestCalendar.View.Menu;
 internal class HarvestCalendarMenu : Billboard
 {
   protected const string BackgroundTexturePath = "LooseSprites\\Billboard";
-  protected const string Header = "Harvest Calendar!";
+  protected const string Header = "Harvest Day <";
 
   private Dictionary<int, Dictionary<FarmableLocationNames, List<Tuple<string, int>>>> harvestData;
   private bool hasHarvestableItem = false;
