@@ -15,23 +15,10 @@ internal sealed class harvestCalendar : Mod
 
     private void OnButtonPressed(object? sender, ButtonPressedEventArgs e)
     {
-        //this.Monitor.Log("Test", LogLevel.Debug);
-
         if (Context.IsWorldReady)
         {
             if (e.Button == SButton.MouseMiddle)
                 Game1.activeClickableMenu = new HarvestCalendarMenu();
-
-            //HarvestableCrops hc = new HarvestableCrops();
-            //List<Crop> islandCrops = hc.getAllCropsInLocation(Game1.getLocationFromNameInLocationsList("IslandWest"));
-
-
-            // foreach (var item in islandCrops)
-            //  {
-            //     Monitor.Log(item.indexOfHarvest.ToString(), LogLevel.Debug);
-            // }
-            //Monitor.Log(islandCrops.Count.ToString(), LogLevel.Debug);
-
         }
     }
 }
