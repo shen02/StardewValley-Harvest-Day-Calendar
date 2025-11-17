@@ -2,6 +2,8 @@ using HarvestCalendar.Model.DailyHarvestInfo;
 using HarvestCalendar.Model.DataTypes;
 using HarvestCalendar.Model.SeasonHarvestInfo;
 
+namespace HarvestCalendar.Model.Translator;
+
 // Functional class that rearranges a HarvestableCrops object into a format that is easier to traverse through by the program's visual component. 
 internal static class HarvestablesTranslator
 {
@@ -33,7 +35,8 @@ internal static class HarvestablesTranslator
 
         foreach (FarmableLocationNames locationName in locationNames)
         {
-            dailyCropHarvest.Add(locationName, cropSetToList(dailyHarvest.getCropSetByLocation(locationName)));
+            if (dailyHarvest.getAllCrops().ContainsKey(locationName))
+                dailyCropHarvest.Add(locationName, cropSetToList(dailyHarvest.getCropSetByLocation(locationName)));
         }
 
         return dailyCropHarvest;
