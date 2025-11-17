@@ -1,25 +1,22 @@
-﻿
-using StardewModdingAPI;
+﻿using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewValley;
 using HarvestCalendar.View.Menu;
+using StardewModdingAPI.Utilities;
 
 internal sealed class harvestCalendar : Mod
 {
+    private KeybindList _menuTrigger { get; set; } = KeybindList.Parse("LeftShift + C");
     public override void Entry(IModHelper helper)
     {
-
-        helper.Events.Input.ButtonPressed += this.OnButtonPressed;
-
+        helper.Events.Input.ButtonsChanged += this.OnButtonPressed;
     }
 
-    private void OnButtonPressed(object? sender, ButtonPressedEventArgs e)
+    private void OnButtonPressed(object? sender, ButtonsChangedEventArgs e)
     {
         if (Context.IsWorldReady)
-        {
-            if (e.Button == SButton.MouseMiddle)
-                Game1.activeClickableMenu = new HarvestCalendarMenu();
-        }
+            if (_menuTrigger.JustPressed())
+                Game1.activeClickableMenu = Game1.activeClickableMenu == null ? new HarvestCalendarMenu() : null;
     }
 }
 
