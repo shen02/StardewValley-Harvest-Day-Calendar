@@ -76,7 +76,6 @@ internal class HarvestCalendarMenu : Billboard
         int num = (int)(4.0 * (double)Game1.dialogueButtonScale / 8.0);
         IClickableMenu.drawTextureBox(b, Game1.mouseCursors, new Rectangle(379, 357, 3, 3), this.calendarDays[index].bounds.X - num, this.calendarDays[index].bounds.Y - num, this.calendarDays[index].bounds.Width + num * 2, this.calendarDays[index].bounds.Height + num * 2, Color.LightPink, 4f, false);
       }
-      //IClickableMenu.drawHoverText(b, this.hoverText, Game1.dialogueFont);
     }
   }
 
@@ -96,9 +95,7 @@ internal class HarvestCalendarMenu : Billboard
         b.Draw(texture, new Rectangle(this.calendarDays[date - 1].bounds.X + 32, this.calendarDays[date - 1].bounds.Y + 50, this.calendarDays[date - 1].bounds.Width / 2, this.calendarDays[date - 1].bounds.Height / 2), data.GetSourceRect(), Color.White);
 
         this.drawHoverMenu(b);
-
       }
-
     }
   }
 
@@ -120,7 +117,6 @@ internal class HarvestCalendarMenu : Billboard
       {
         totalLines += 1;
       }
-
     }
     int height = totalLines * lineHeight + totalPadding * 2;
     IClickableMenu.drawTextureBox(b, Game1.menuTexture, new Rectangle(0, 256, 60, 60), X + mouseDistancePadding, Y + mouseDistancePadding, width, height, Color.White);
@@ -185,7 +181,6 @@ internal class HarvestCalendarMenu : Billboard
 
       this.drawHoverBox(b, X, Y, iconWidth, iconDistance, iconPerLine, lineHeight, mouseDistancePadding, totalPadding);
       this.drawHoverContent(b, X, Y, iconWidth, iconDistance, iconPerLine, lineHeight, totalPadding);
-
     }
   }
 
