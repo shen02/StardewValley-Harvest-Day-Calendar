@@ -11,7 +11,11 @@
 
 
 ## Function
+This programme serves as an injected modification to the game [Stardew Valley](https://www.stardewvalley.net/). 
 
+Its purpose is to collect data on all player-planted crops among the game's 3 farmable locations, compute the crops' respective dates of harvest within the season, then render the data onto an in-game calendar of 28 days.
+
+![Harvest-Components.png](https://i.postimg.cc/YS6kHdcW/Harvest-Components.png)
 
 ## Design
 
@@ -19,7 +23,7 @@
 ## Installation
 Right [here](https://www.nexusmods.com/stardewvalley/mods/39419?tab=files)!
 
-Please also refer to the [Harvest Day Calendar](#https://www.nexusmods.com/stardewvalley/mods/39419) page on Nexus Mods for additional information regarding the program's behavior as a mod in the native game environment. 
+Please also refer to the [Harvest Day Calendar](https://www.nexusmods.com/stardewvalley/mods/39419) page on Nexus Mods for additional information regarding the program's behavior in the native game environment. 
 
 
 ## Useful-Snippets
