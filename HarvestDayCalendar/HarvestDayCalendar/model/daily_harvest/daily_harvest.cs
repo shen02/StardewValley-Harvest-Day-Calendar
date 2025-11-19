@@ -1,45 +1,48 @@
 using HarvestCalendar.Model.DataTypes;
+using HarvestCalendar.Model.HarvestableWithQuantity;
+using Netcode;
+using StardewValley;
 
-namespace HarvestCalendar.Model.DailyHarvestInfo;
+namespace HarvestCalendar.Model.DailyHarvests;
 
 // Daily harvest represents a dictionary that maps a list of harvestable crops with their quantities to the GameLocation to which they are planted.
 // The object construtor takes in an enumeration of locationNames, which represents all farmable location in the game's given context.
 // Invariant: GameLocation is one of: Farm, IslandWest, Greenhouse.
-internal class DailyHarvest
+public class DailyHarvest<T, R> where T : Crop, INetObject<NetFields> where R : IHarvestableWithQuantity<T>
 {
-    protected Dictionary<FarmableLocationNames, HashSet<CropWithQuantity>> dailyHarvest;
+    protected Dictionary<FarmableLocationNames, HashSet<R>> dailyHarvest;
 
     public DailyHarvest()
     {
-        dailyHarvest = new Dictionary<FarmableLocationNames, HashSet<CropWithQuantity>>();
+        dailyHarvest = new Dictionary<FarmableLocationNames, HashSet<R>>();
     }
 
-    public void addCrops(FarmableLocationNames locationName, HashSet<CropWithQuantity> crop)
+    public void addHarvestables(FarmableLocationNames locationName, HashSet<R> harvestable)
     {
         if (dailyHarvest.ContainsKey(locationName))
-            dailyHarvest[locationName].UnionWith(crop);
+            dailyHarvest[locationName].UnionWith(harvestable);
         else
-            dailyHarvest.Add(locationName, crop);
+            dailyHarvest.Add(locationName, harvestable);
     }
 
     // Note: kind of a weird inverse-design
-    public void addCrop(FarmableLocationNames locationName, HashSet<CropWithQuantity> crop)
+    public void addHarvestable(FarmableLocationNames locationName, HashSet<R> harvestable)
     {
-        addCrops(locationName, new HashSet<CropWithQuantity>(crop));
+        addHarvestables(locationName, new HashSet<R>(harvestable));
     }
 
     // Most likely won't be used in the context of this mod but created for data stucture design
-    public void removeCrop(FarmableLocationNames locationName, CropWithQuantity crop)
+    public void removeHarvestable(FarmableLocationNames locationName, R harvestable)
     {
-        dailyHarvest[locationName].Remove(crop);
+        dailyHarvest[locationName].Remove(harvestable);
     }
 
-    public HashSet<CropWithQuantity> getCropSetByLocation(FarmableLocationNames location)
+    public HashSet<R> getHarvestableSetByLocation(FarmableLocationNames location)
     {
         return dailyHarvest[location];
     }
 
-    public Dictionary<FarmableLocationNames, HashSet<CropWithQuantity>> getAllCrops()
+    public Dictionary<FarmableLocationNames, HashSet<R>> getAllHarvestables()
     {
         return this.dailyHarvest;
     }

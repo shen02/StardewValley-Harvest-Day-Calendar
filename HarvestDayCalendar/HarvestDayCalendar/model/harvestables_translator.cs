@@ -1,6 +1,8 @@
-using HarvestCalendar.Model.DailyHarvestInfo;
+using HarvestCalendar.Model.DailyHarvests;
 using HarvestCalendar.Model.DataTypes;
+using HarvestCalendar.Model.HarvestableWithQuantity;
 using HarvestCalendar.Model.SeasonHarvestInfo;
+using StardewValley;
 
 namespace HarvestCalendar.Model.Translator;
 
@@ -14,9 +16,9 @@ internal static class HarvestablesTranslator
         Dictionary<int, Dictionary<FarmableLocationNames, List<Tuple<string, int>>>> translatedCrops = new Dictionary<int, Dictionary<FarmableLocationNames, List<Tuple<string, int>>>>();
 
         // The dictionary object mapping days until harvest with their harvests
-        Dictionary<int, DailyHarvest> cropsByDate = harvestableCrops.getAllHarvestableCrops();
+        Dictionary<int, DailyHarvest<Crop, CropWithQuantity>> cropsByDate = harvestableCrops.getAllHarvestables();
 
-        foreach (KeyValuePair<int, DailyHarvest> daysUntilHarvest in cropsByDate)
+        foreach (KeyValuePair<int, DailyHarvest<Crop, CropWithQuantity>> daysUntilHarvest in cropsByDate)
         {
             int harvestDate = daysUntilHarvest.Key + currentDate;
 
@@ -27,7 +29,7 @@ internal static class HarvestablesTranslator
     }
 
     // Takes in a dailyHarvest object and flatten it to a dictionary object with all the location and crop data.
-    public static Dictionary<FarmableLocationNames, List<Tuple<string, int>>> getDailyHarvests(DailyHarvest dailyHarvest)
+    public static Dictionary<FarmableLocationNames, List<Tuple<string, int>>> getDailyHarvests(DailyHarvest<Crop, CropWithQuantity> dailyHarvest)
     {
         Dictionary<FarmableLocationNames, List<Tuple<string, int>>> dailyCropHarvest = new Dictionary<FarmableLocationNames, List<Tuple<string, int>>>();
 
@@ -35,8 +37,8 @@ internal static class HarvestablesTranslator
 
         foreach (FarmableLocationNames locationName in locationNames)
         {
-            if (dailyHarvest.getAllCrops().ContainsKey(locationName))
-                dailyCropHarvest.Add(locationName, cropSetToList(dailyHarvest.getCropSetByLocation(locationName)));
+            if (dailyHarvest.getAllHarvestables().ContainsKey(locationName))
+                dailyCropHarvest.Add(locationName, cropSetToList(dailyHarvest.getHarvestableSetByLocation(locationName)));
         }
 
         return dailyCropHarvest;
@@ -58,6 +60,6 @@ internal static class HarvestablesTranslator
     // Takes in a CropWithQuantity object and return a tuple of the crop's harvestIndex and quantity.
     public static Tuple<string, int> cropWithQuantityToTuple(CropWithQuantity cropWithQuantity)
     {
-        return new Tuple<string, int>(cropWithQuantity.getCrop().indexOfHarvest.Value, cropWithQuantity.getQuantity());
+        return new Tuple<string, int>(cropWithQuantity.getHarvestable().indexOfHarvest.Value, cropWithQuantity.getQuantity());
     }
 }
