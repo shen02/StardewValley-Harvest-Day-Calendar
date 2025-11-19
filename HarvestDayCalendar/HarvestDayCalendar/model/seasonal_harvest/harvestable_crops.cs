@@ -122,7 +122,7 @@ internal class HarvestableCrops : IHarvestable<Crop, CropWithQuantity>
     }
 
     // Return the time remaining for the given crop to become harvestable.
-    // Invariant: the last two members of the crop.phaseDays are always [9999, ''] to prevent further phase progression after the crop is ready for harvest.
+    // Invariant: the last members of the crop.phaseDays are always 9999 to prevent further phase progression after the crop is ready for harvest.
     public int getTimeUntilHarvest(Crop crop)
     {
         // If the plant is regrowing but not yet ready for re-harvesr
