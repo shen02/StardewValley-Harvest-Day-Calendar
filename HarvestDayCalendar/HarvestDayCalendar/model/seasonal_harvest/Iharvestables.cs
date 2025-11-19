@@ -1,5 +1,3 @@
-
-using Netcode;
 using HarvestCalendar.Model.DailyHarvests;
 using HarvestCalendar.Model.HarvestableWithQuantity;
 using HarvestCalendar.Model.DataTypes;
