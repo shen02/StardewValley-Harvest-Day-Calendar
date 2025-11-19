@@ -38,7 +38,7 @@ internal class HarvestableCrops : IHarvestable<Crop, CropWithQuantity>
         List<Crop> islandCrops = getAllHarvestablesInLocation(Game1.getLocationFromName("IslandWest"));
         List<Crop> greenHouseCrops = getAllHarvestablesInLocation(Game1.getLocationFromName("Greenhouse"));
 
-        Dictionary<int, HashSet<CropWithQuantity>> farmSet = mapByHarvestDate(farmCrops);
+        Dictionary<int, HashSet<CropWithQuantity>> farmSet = farmCrops.Count > 0 ? mapByHarvestDate(farmCrops) : new Dictionary<int, HashSet<CropWithQuantity>>();
 
         Dictionary<int, HashSet<CropWithQuantity>> islandSet = islandCrops.Count > 0 ? mapByHarvestDate(islandCrops) : new Dictionary<int, HashSet<CropWithQuantity>>();
 
@@ -71,7 +71,6 @@ internal class HarvestableCrops : IHarvestable<Crop, CropWithQuantity>
             {
                 allCropsByDate.Add(i, daily);
             }
-
         }
 
         return allCropsByDate;
@@ -99,7 +98,6 @@ internal class HarvestableCrops : IHarvestable<Crop, CropWithQuantity>
 
             cropsByHarvestDay.Add(cropGroup.Key, harvestableCropSet);
         }
-
 
         return cropsByHarvestDay;
     }
