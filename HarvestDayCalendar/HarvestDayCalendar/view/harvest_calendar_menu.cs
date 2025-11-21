@@ -3,10 +3,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
 using StardewValley.Menus;
 using StardewValley;
-using HarvestCalendar.Model.SeasonHarvestInfo;
 using HarvestCalendar.Model.DataTypes;
-using HarvestCalendar.Controller.Translator;
-using Microsoft.VisualBasic;
 
 namespace HarvestCalendar.View.Menu;
 
