@@ -4,7 +4,7 @@ using HarvestCalendar.Model.HarvestableWithQuantity;
 using HarvestCalendar.Model.SeasonHarvestInfo;
 using StardewValley;
 
-namespace HarvestCalendar.Model.Translator;
+namespace HarvestCalendar.Controller.Translator;
 
 // Functional class that rearranges a HarvestableCrops object into a format that is easier to traverse through by the program's visual component. 
 internal static class HarvestablesTranslator
