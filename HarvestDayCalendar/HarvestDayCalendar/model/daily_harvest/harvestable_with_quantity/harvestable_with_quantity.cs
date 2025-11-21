@@ -5,7 +5,6 @@ namespace HarvestCalendar.Model.HarvestableWithQuantity;
 // Interface representing a Tuple<HarvestableObjectType harvest, int quantity>.
 public abstract class HarvestableWithQuantity<T> where T : Crop
 {
-
     protected T _harvestable;
     protected int _quantity = 0;
 

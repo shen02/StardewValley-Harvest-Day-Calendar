@@ -1,8 +1,10 @@
 ﻿using StardewModdingAPI;
 using StardewModdingAPI.Events;
+using StardewModdingAPI.Utilities;
 using StardewValley;
 using HarvestCalendar.View.Menu;
-using StardewModdingAPI.Utilities;
+using HarvestCalendar.Controller.Translator;
+using HarvestCalendar.Model.SeasonHarvestInfo;
 
 internal sealed class harvestCalendar : Mod
 {
@@ -16,7 +18,13 @@ internal sealed class harvestCalendar : Mod
     {
         if (Context.IsWorldReady)
             if (_menuTrigger.JustPressed())
-                Game1.activeClickableMenu = Game1.activeClickableMenu.GetType() == typeof(HarvestCalendarMenu) ? null : new HarvestCalendarMenu();
+            {
+                HarvestableCrops allHravestableCrops = new HarvestableCrops(Game1.Date.TotalDays);
+                HarvestCalendarMenu menu = new HarvestCalendarMenu(HarvestablesTranslator.translate(Game1.dayOfMonth, allHravestableCrops));
+                Game1.activeClickableMenu = Game1.activeClickableMenu == null || Game1.activeClickableMenu.GetType() != typeof(HarvestCalendarMenu) ? menu : null;
+            }
+
+
     }
 }
 

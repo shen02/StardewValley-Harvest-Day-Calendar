@@ -1,11 +1,12 @@
-using HarvestCalendar.Model.SeasonHarvestInfo;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework;
 using StardewValley.Menus;
 using StardewValley;
-using Microsoft.Xna.Framework;
+using HarvestCalendar.Model.SeasonHarvestInfo;
 using HarvestCalendar.Model.DataTypes;
-using HarvestCalendar.Model.Translator;
-using Microsoft.Xna.Framework.Input;
+using HarvestCalendar.Controller.Translator;
+using Microsoft.VisualBasic;
 
 namespace HarvestCalendar.View.Menu;
 
@@ -19,12 +20,12 @@ internal class HarvestCalendarMenu : Billboard
 
   private int dateOfHover = 0;
 
-  public HarvestCalendarMenu()
+  // Invariant: this.calendarDays.count will always be equal to Game1.Date.totalDays.
+  public HarvestCalendarMenu(Dictionary<int, Dictionary<FarmableLocationNames, List<Tuple<string, int>>>> harvestData)
   {
-    HarvestableCrops allHravestableCrops = new HarvestableCrops(calendarDays.Count);
-    harvestData = HarvestablesTranslator.translate(Game1.dayOfMonth, allHravestableCrops);
+    //HarvestableCrops allHravestableCrops = new HarvestableCrops(calendarDays.Count);
+    this.harvestData = harvestData;//HarvestablesTranslator.translate(Game1.dayOfMonth, allHravestableCrops);
   }
-
 
   public override void performHoverAction(int x, int y)
   {
