@@ -1,6 +1,6 @@
 ## About This Path: External
 
-```HarvestDayCalendar/External``` includes interface/class by other creators for the purpose of integrating the Harvest Calendar program with other mods. 
+```HarvestDayCalendar/External``` includes interface/class files by other creators for the purpose of integrating the Harvest Calendar program with other mods. 
 
 All files are taken with permission. 
 
