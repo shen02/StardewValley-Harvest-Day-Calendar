@@ -53,7 +53,7 @@ internal sealed class harvestCalendar : Mod
                 HarvestableCrops allHravestableCrops = new HarvestableCrops(Game1.Date.TotalDays);
                 HarvestCalendarMenu menu = new HarvestCalendarMenu(HarvestablesTranslator.translate(Game1.dayOfMonth, allHravestableCrops));
 
-                Game1.activeClickableMenu = Game1.activeClickableMenu == null || Game1.activeClickableMenu.GetType() != typeof(HarvestCalendarMenu) ? menu : Game1.activeClickableMenu;
+                Game1.activeClickableMenu = Game1.activeClickableMenu == null || Game1.activeClickableMenu.GetType() != typeof(HarvestCalendarMenu) ? menu : null;
             }
         }
     }
