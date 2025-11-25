@@ -1,11 +1,4 @@
-using StardewModdingAPI;
-using StardewModdingAPI.Events;
 using StardewModdingAPI.Utilities;
-using StardewValley;
-using HarvestCalendar.View.Menu;
-using HarvestCalendar.Controller.Translator;
-using HarvestCalendar.Model.SeasonHarvestInfo;
-using HarvestCalendar.External;
 
 namespace HarvestCalendar.Model.Config;
 
